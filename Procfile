@@ -1,0 +1,1 @@
+web: gunicorn president_review.wsgi --log-file -
