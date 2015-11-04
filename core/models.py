@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 # Create your models here.
+
 candidate_options = (
 (0, ''),
 (1, 'Jeb Bush'),
@@ -13,6 +14,7 @@ candidate_options = (
 (7, 'Marco Rubio'),
 (8, 'Bernie Sanders'),
 (9, 'Donald Trump'),
+(10, 'Guido Lang'),
 )
 
 class Question(models.Model):
@@ -25,3 +27,4 @@ class Question(models.Model):
 
   def __unicode__(self):
     return self.name
+
