@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>{{ question.title }}</h1>
-<p>{{ question.description }}</p>
+<h1>{{ question.name }}</h1>
+<p>{{ question.review }}</p>
 <p>Asked by {{ question.user.username }} on {{ question.created_at }}</p>
+{% if question.user == user %}
+<p><a href="{% url 'question_update' pk=question.id %}">Edit question</a></p>
+{% endif %}
 {% endblock %}

@@ -3,26 +3,28 @@
 {% block content %}
 
 <div style="float:clear"><h2> Republican Party</h2></div>
-<div style="float:left;text-align:center;"><p>Donald Trump</p><img src='{% static 'img/trump.jpg' %}' style="width:200px;height:200px"  class="icons"/></div>
+<div style="float:left;text-align:center;"><p>Donald Trump</p><a href="{% url 'question_create' %}"><img src='{% static 'img/trump.jpg' %}' style="width:200px;height:200px"  class="icons"/></a></div>
 
-<div style="float:left;text-align:center;"><p>Ben Carson</p><img src='{% static 'img/carson.jpg' %}' style="width:200px;height:200px"  class="icons"/></div>
+<div class="candidate-img"><p>Ben Carson</p><a href="{% url 'question_create' %}"><img src='{% static 'img/carson.jpg' %}' style="width:200px;height:200px"  class="icons"/></a></div>
 
- <div style="float:left;text-align:center;"><p>Marco Rubio</p><img src='{% static 'img/rubio.jpg' %}' style="width:200px;height:200px"  class="icons"/></div>
+ <div class="candidate-img"><p>Marco Rubio</p><a href="{% url 'question_create' %}"><img src='{% static 'img/rubio.jpg' %}' style="width:200px;height:200px"  class="icons"/></a></div>
 
- <div style="float:left;text-align:center;"><p>Jeb Bush</p><img src='{% static 'img/bush.jpg' %}' style="width:200px;height:200px"  class="icons"/></div>
+ <div class="candidate-img"><p>Jeb Bush</p><a href="{% url 'question_create' %}"><img src='{% static 'img/bush.jpg' %}' style="width:200px;height:200px"  class="icons"/></a></div>
 
-<div style="float:left;text-align:center;"><p>Ted Cruz</p><img src='{% static 'img/cruz.jpg' %}' style="width:200px;height:200px"  class="icons"/></div>
+<div class="candidate-img"><p>Ted Cruz</p><a href="{% url 'question_create' %}"><img src='{% static 'img/cruz.jpg' %}' style="width:200px;height:200px"  class="icons"/></a></div>
 
 <h2 style="float:clear; "> Democratic Party</h2>
-<div style="float:left;text-align:center;"><p>Hillary Clinton</p><img src='{% static 'img/clinton.jpg' %}' style="width:200px;height:200px"  class="icons"/></div>
+<div class="candidate-img"><p>Hillary Clinton</p><a href="{% url 'question_create' %}"><img src='{% static 'img/clinton.jpg' %}' style="width:200px;height:200px"  class="icons"/></a></div>
 
-<div style="float:left;text-align:center;"><p>Lawrence Lessig</p><img src='{% static 'img/Lessig.jpg' %}' style="width:200px;height:200px"  class="icons"/></div>
+<div class="candidate-img"><p>Lawrence Lessig</p><a href="{% url 'question_create' %}"><img src='{% static 'img/Lessig.jpg' %}' style="width:200px;height:200px"  class="icons"/></a></div>
 
-<div style="float:left;text-align:center;"><p>Martin OMalley</p><img src='{% static 'img/OMalley.jpg' %}' style="width:200px;height:200px"  class="icons"/></div>
+<div class="candidate-img"><p>Martin OMalley</p><a href="{% url 'question_create' %}"><img src='{% static 'img/OMalley.jpg' %}' style="width:200px;height:200px"  class="icons"/></a></div>
 
-<div style="float:left;text-align:center;"><p>Bernie Sanders</p><img src='{% static 'img/sanders.jpg' %}' style="width:200px;height:200px" class="icons"/></div>
+<div class="candidate-img"><p>Bernie Sanders</p><a href="{% url 'question_create' %}"><img src='{% static 'img/sanders.jpg' %}' style="width:200px;height:200px" class="icons"/></a></div>
+
+<div class="candidate-img"><p>Jim Webb</p><a href="{% url 'question_create' %}"><img src='{% static 'img/webb.jpg' %}' style="width:200px;height:200px" class="icons"/></a></div>
 
 <h2 style="float:clear">Independent Party</h2>
-<div style="float:left;text-align:center;"><p>Guido Lang</p><img src='{% static 'img/lang.jpg' %}' style="width:200px;height:200px" class="icons"/></div>
+<div class="candidate-img"><p>Guido Lang</p><a href="{% url 'question_create' %}"><img src='{% static 'img/lang.jpg' %}' style="width:200px;height:200px" class="icons"/></a></div>
 
 {% endblock %}
