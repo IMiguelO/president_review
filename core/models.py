@@ -36,7 +36,7 @@ class Answer(models.Model):
     question = models.ForeignKey(Question)
     user = models.ForeignKey(User)
     created_at = models.DateTimeField(auto_now_add=True)
-    text = models.TextField()
+    opinion = models.TextField()
 
     def __unicode__(self):
-        return self.text
+        return self.Opinion
