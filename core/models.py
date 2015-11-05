@@ -40,10 +40,11 @@ class Answer(models.Model):
 
     def __unicode__(self):
         return self.Opinion
-      
+
 class Vote(models.Model):
     user = models.ForeignKey(User)
-    question = models.ForeignKey(Question)
-    
+    question = models.ForeignKey(Question, blank=True, null=True)
+    answer = models.ForeignKey(Answer, blank=True, null=True)
+
     def __unicode__(self):
         return "%s upvoted" % (self.user.username)
