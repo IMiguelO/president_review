@@ -25,13 +25,17 @@
                 <ul class="nav navbar-nav navbar-right">
                   <li><a href="{% url 'candidates' %}">Candidates</a></li>
                   {% if user.is_authenticated %}
+                  <form action="{% url 'search' %}" class="navbar-form navbar-left" method="get">
+                      <input type="text" placeholder="Search" class="form-control" name="query">
+                  </form>
                   <li><a href="{% url 'question_list' %}">Reviews</a></li>
                   <li><a href="{% url 'question_create' %}">Review a Candidate</a></li>
+                  <li><a href="{% url 'user_detail' slug=user.username %}">Profile</a></li>
                   <li><a href="{% url 'auth_logout' %}">Logout</a></li>
                   {% else %}
                   <li><a href="{% url 'auth_login' %}">Login</a></li>
                   {% endif %}
-                  <li><a href="{% url 'user_detail' slug=user.username %}">Profile</a></li>
+                  
                 </ul>
             </div>
         </div>
