@@ -8,13 +8,13 @@
 <p><a href="{% url 'user_update' slug=user.username %}">Edit profile</a></p>
 <p><a href="{% url 'user_delete' slug=user.username %}">Delete account</a></p>
 {% endif %}
-<h3>Questions ({{ questions.count }})</h3>
+<h3>Reviews ({{ questions.count }})</h3>
 {% for question in questions %}
-    <p><a href="{{ question.get_absolute_url }}">{{ question.title }}</a></p>
+    <p><a href="{{ question.get_absolute_url }}">{{ question.get_title_display }}</a></p>
 {% endfor %}
-<h3>Answers ({{ answers.count }})</h3>
+<h3>Opinions ({{ answers.count }})</h3>
 {% for answer in answers %}
-    <p><a href="{{ answer.question.get_absolute_url }}">{{ answer.question.title  }}</a></p>
-    <p>> {{ answer.text }}</p>
+    <p><a href="{{ answer.question.get_absolute_url }}">{{ answer.question.get_title_display  }}</a></p>
+    <p>> {{ answer.opinion }}</p>
 {% endfor %}
 {% endblock %}

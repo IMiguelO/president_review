@@ -2,7 +2,7 @@
 {% block content %}
 {% for question in object_list %}
 <div class="panel">
-    <h3><a href="{{ question.get_absolute_url }}">{{ question.name }}</a> reviewed {{ question.title }}</h3>
+    <h3><a href="{{ question.get_absolute_url }}">{{ question.name }}</a> reviewed {{ question.get_title_display }}</h3>
     <p>Asked by <a href="{% url 'user_detail' slug=question.user.username %}">{{ question.user.username }}</a> on {{     question.created_at }}</p>
     <p>{{ question.vote_set.all.count }} Vote{{ question.vote_set.all.count|pluralize }}</p>
       <form method="post" action="{% url 'vote' %}">
@@ -15,4 +15,16 @@
 {% empty %}
 <p>No results found.</p>
 {% endfor %}
+{% if is_paginated %}
+<nav>
+    <ul class="pager">
+        {% if page_obj.has_previous %}
+        <li><a href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+        {% endif %}
+        {% if page_obj.has_next %}
+        <li><a href="?page={{ page_obj.next_page_number }}">Next</a></li>
+        {% endif %}
+    </ul>
+</nav>
+{% endif %}
 {% endblock %}
