@@ -3,6 +3,10 @@ from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 
 # Create your models here.
+VISIBILITY_CHOICES = (
+(0, 'Public'),
+(1, 'Anonymous'),
+)
 
 candidate_options = (
 (0, ''),
@@ -25,6 +29,7 @@ class Question(models.Model):
   review = models.TextField(null=True, blank=True)
   created_at = models.DateTimeField(auto_now_add=True)
   user = models.ForeignKey(User)
+  visibility = models.IntegerField(choices=VISIBILITY_CHOICES, default=0)
 
   def __unicode__(self):
     return self.name
@@ -37,6 +42,7 @@ class Answer(models.Model):
     user = models.ForeignKey(User)
     created_at = models.DateTimeField(auto_now_add=True)
     opinion = models.TextField()
+    visibility = models.IntegerField(choices=VISIBILITY_CHOICES, default=0)
 
     def __unicode__(self):
         return self.Opinion
