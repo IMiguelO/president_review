@@ -8,9 +8,9 @@
     <title>President Reviews</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
-  <link href="{% static "css/base.css" %}" rel="stylesheet">
+    <link href="{% static "css/base.css" %}" rel="stylesheet">
 </head>
-<body>
+<body style="background-color:">
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -35,7 +35,7 @@
                   {% else %}
                   <li><a href="{% url 'auth_login' %}">Login</a></li>
                   {% endif %}
-                  
+
                 </ul>
             </div>
         </div>

@@ -2,7 +2,7 @@
 {% block content %}
 {% for question in object_list %}
 <div class="panel">
-    <h3>{% if question.visibility == 0 %}<a href="{{ question.get_absolute_url }}">{{ question.name }}</a> {% else %} A Ghost {% endif %} reviewed {{ question.get_title_display }}</h3>
+    <h3>{% if question.visibility == 0 %}{{ question.name }} {% else %} A Ghost {% endif %} reviewed <a href="{{ question.get_absolute_url }}">{{ question.get_title_display }}</a></h3>
     <p>Asked {% if question.visibility == 0 %} by <a href="{% url 'user_detail' slug=question.user.username %}">{{ question.user.username }}</a> {% endif %} on {{ question.created_at }}</p>
       <form method="post" action="{% url 'vote' %}">
       <span class="badge">{{ question.answer_set.all.count }} Answer{{  question.answer_set.all.count|pluralize }}        </span>
