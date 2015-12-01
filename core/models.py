@@ -45,7 +45,7 @@ class Answer(models.Model):
     visibility = models.IntegerField(choices=VISIBILITY_CHOICES, default=0)
 
     def __unicode__(self):
-        return self.Opinion
+        return self.opinion
 
 class Vote(models.Model):
     user = models.ForeignKey(User)
