@@ -29,7 +29,11 @@ class Migration(migrations.Migration):
             field=models.CharField(default=datetime.datetime(2015, 11, 2, 20, 19, 31, 391587, tzinfo=utc), max_length=300),
             preserve_default=False,
         ),
-        migrations.AlterField(
+        migrations.RemoveField(
+            model_name='question',
+            name='title',
+        ),
+migrations.AddField(
             model_name='question',
             name='title',
             field=models.IntegerField(default=0, choices=[(0, b''), (1, b'Jeb Bush'), (2, b'Ben Carson'), (3, b'Hillary Clinton'), (4, b'Ted Cruz'), (5, b'Lawrence Lessig'), (6, b'Martin OMalley'), (7, b'Marco Rubio'), (8, b'Bernie Sanders'), (9, b'Donald Trump'), (10, b'Guido Lang')]),
