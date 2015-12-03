@@ -42,3 +42,7 @@ body {
     opacity: 1.0;
   }
 
+@font-face {
+  font-family: hola;
+  src: url('hola.ttf');
+}
