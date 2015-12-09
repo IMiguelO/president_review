@@ -2,22 +2,20 @@
       <title>My Profile</title>
 </head>
 {% extends 'base.html' %}
+{% load staticfiles %}
 {% block content %}
+<img src='{% static 'img/Male.png' %}' style="float:left; padding:2em;">
+
+<div style="padding:2em; background-color:#e5f2ff; float:left; width:75%; margin-top:3em; margin-right:1em; border-radius: 25px;">
+
 <h1>{{ user_in_view.username }}</h1>
-<p>Email address: {{ user_in_view.email }}</p>
-<p>First name: {{ user_in_view.first_name }}</p>
-<p>Last name: {{ user_in_view.last_name }}</p>
+<p>Email: {{ user_in_view.email }}</p>
+<p>Name: {{ user_in_view.first_name }} {{ user_in_view.last_name }}</p>
 {% if user_in_view == user %}
 <p><a href="{% url 'user_update' slug=user.username %}">Edit profile</a></p>
 <p><a href="{% url 'user_delete' slug=user.username %}">Delete account</a></p>
 {% endif %}
-<h3>Reviews ({{ questions.count }})</h3>
-{% for question in questions %}
-    <p><a href="{{ question.get_absolute_url }}">{{ question.get_title_display }}</a></p>
-{% endfor %}
-<h3>Opinions ({{ answers.count }})</h3>
-{% for answer in answers %}
-    <p><a href="{{ answer.question.get_absolute_url }}">{{ answer.question.get_title_display  }}</a></p>
-    <p>> {{ answer.opinion }}</p>
-{% endfor %}
+
+
+</div>
 {% endblock %}
